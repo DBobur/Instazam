@@ -11,8 +11,10 @@ public class LikeRepository extends BaseRepository<Like> {
     public static LikeRepository getInstance(){
         return likeRepository;
     }
+
+
     @Override
-    protected boolean hasModel() {
+    protected boolean hasModel(Like like) {
         return false;
     }
 

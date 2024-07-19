@@ -10,8 +10,10 @@ public class PostRepository extends BaseRepository<Post> {
     public static PostRepository getInstance(){
         return postRepository;
     }
+
+
     @Override
-    protected boolean hasModel() {
+    protected boolean hasModel(Post post) {
         return false;
     }
 

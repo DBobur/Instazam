@@ -11,8 +11,9 @@ public class ChatRepository extends BaseRepository<Chat>{
         return chatRepository;
     }
 
+
     @Override
-    protected boolean hasModel() {
+    protected boolean hasModel(Chat chat) {
         return false;
     }
 

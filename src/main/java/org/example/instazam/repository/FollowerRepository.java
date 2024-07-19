@@ -10,8 +10,10 @@ public class FollowerRepository extends BaseRepository<Follower> {
     public static FollowerRepository getInstance(){
         return followerRepository;
     }
+
+
     @Override
-    protected boolean hasModel() {
+    protected boolean hasModel(Follower follower) {
         return false;
     }
 

@@ -2,6 +2,7 @@ package org.example.instazam.repository;
 
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
+import org.example.instazam.excaption.DataNotFoundExcaption;
 import org.example.instazam.model.BaseModel;
 import org.example.instazam.model.User;
 
@@ -26,7 +27,7 @@ public abstract class BaseRepository<T extends BaseModel>{
 
     public T save(T t){
         ArrayList<T> ts = readAll();
-        if(hasModel()) return null;
+        if(hasModel(t)) throw new DataNotFoundExcaption("Data not found");
         ts.add(t);
         writeAll(ts);
         return t;
@@ -48,7 +49,7 @@ public abstract class BaseRepository<T extends BaseModel>{
         for (T t : ts) {
             if(Objects.equals(t.getId(),id)) return t;
         }
-        return null;
+        throw new DataNotFoundExcaption("Data not found");
     }
 
     public void writeAll(List<T> ts){
@@ -60,7 +61,7 @@ public abstract class BaseRepository<T extends BaseModel>{
         }
     }
 
-    protected abstract boolean hasModel();
+    protected abstract boolean hasModel(T t);
     protected abstract Class<T> getTypeClass();
 }
 

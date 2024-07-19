@@ -11,8 +11,9 @@ public class BlockedInfoRepository extends BaseRepository<BlockedInfo> {
         return blockedInfoRepository;
     }
 
+
     @Override
-    protected boolean hasModel() {
+    protected boolean hasModel(BlockedInfo blockedInfo) {
         return false;
     }
 

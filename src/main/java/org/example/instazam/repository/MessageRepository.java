@@ -10,8 +10,10 @@ public class MessageRepository extends BaseRepository<Message> {
     public static MessageRepository getInstance(){
         return messageRepository;
     }
+
+
     @Override
-    protected boolean hasModel() {
+    protected boolean hasModel(Message message) {
         return false;
     }
 

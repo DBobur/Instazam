@@ -2,6 +2,9 @@ package org.example.instazam.repository;
 
 import org.example.instazam.model.User;
 
+import java.util.ArrayList;
+import java.util.Objects;
+
 public class UserRepository extends BaseRepository<User> {
     private UserRepository() {
         path += "/users.json";
@@ -12,7 +15,12 @@ public class UserRepository extends BaseRepository<User> {
     }
 
     @Override
-    protected boolean hasModel() {
+    protected boolean hasModel(User u) {
+        ArrayList<User> users = readAll();
+        for (User user : users) {
+            if (Objects.equals(user.getUsername(),u.getUsername())
+            || Objects.equals(user.getEmail(),u.getEmail())) return true;
+        }
         return false;
     }
 

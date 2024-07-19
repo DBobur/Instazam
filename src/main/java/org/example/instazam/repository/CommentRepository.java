@@ -10,8 +10,10 @@ public class CommentRepository extends BaseRepository<Comment> {
     public static CommentRepository getInstance(){
         return commentRepository;
     }
+
+
     @Override
-    protected boolean hasModel() {
+    protected boolean hasModel(Comment comment) {
         return false;
     }
 
