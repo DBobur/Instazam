@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "fullName": "b",
+    "username": "b",
+    "email": "b",
+    "password": "0320",
+    "id": "f8edf0bd-2f43-4846-9344-cb2641a9a01e",
+    "createdDate": "2024-07-19T00:16:54.280041",
+    "active": true
+  }
+]
