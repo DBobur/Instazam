@@ -6,8 +6,8 @@ public class ChatRepository extends BaseRepository<Chat>{
     private ChatRepository() {
         path += "/chats.json";
     }
-    private ChatRepository chatRepository = new ChatRepository();
-    public ChatRepository getInstance(){
+    private static ChatRepository chatRepository = new ChatRepository();
+    public static ChatRepository getInstance(){
         return chatRepository;
     }
 

@@ -6,8 +6,8 @@ public class BlockedInfoRepository extends BaseRepository<BlockedInfo> {
     private BlockedInfoRepository() {
         path += "/blockedInfos.json";
     }
-    private BlockedInfoRepository blockedInfoRepository = new BlockedInfoRepository();
-    public BlockedInfoRepository getInstance(){
+    private static BlockedInfoRepository blockedInfoRepository = new BlockedInfoRepository();
+    public static BlockedInfoRepository getInstance(){
         return blockedInfoRepository;
     }
 
