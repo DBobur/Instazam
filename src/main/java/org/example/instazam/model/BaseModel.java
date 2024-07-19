@@ -17,4 +17,5 @@ public abstract class BaseModel {
     protected UUID id;
     protected LocalDateTime createdDate;
     protected boolean active;
+
 }
