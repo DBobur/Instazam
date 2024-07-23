@@ -6,10 +6,7 @@ import org.example.instazam.excaption.DataNotFoundExcaption;
 import org.example.instazam.model.BaseModel;
 import org.example.instazam.model.User;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.lang.reflect.Type;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -55,6 +52,7 @@ public abstract class BaseRepository<T extends BaseModel>{
     public void writeAll(List<T> ts){
         try(FileWriter writer = new FileWriter(path)) {
             String json = gson.toJson(ts);
+            //Writer
             writer.write(json);
         } catch (IOException e) {
             throw new RuntimeException(e);
